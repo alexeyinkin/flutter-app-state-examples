@@ -3,15 +3,13 @@ import 'package:flutter/foundation.dart';
 
 import '../../models/book.dart';
 
-import 'bloc.dart';
 import 'screen.dart';
 
-class BookDetailsPage extends BlocMaterialPage<PageConfiguration, BookDetailsBloc> {
+class BookDetailsPage extends StatelessMaterialPage<PageConfiguration> {
   BookDetailsPage({
     required Book book,
   }) : super(
     key: ValueKey('Book_${book.id}'),
-    bloc: BookDetailsBloc(book: book),
-    createScreen: (b) => BookDetailsScreen(bloc: b),
+    child: BookDetailsScreen(book: book),
   );
 }
