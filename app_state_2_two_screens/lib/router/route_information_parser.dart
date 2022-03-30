@@ -5,7 +5,7 @@ import '../pages/book_list/configurations.dart';
 
 class AppRouteInformationParser extends RouteInformationParser<PageStackConfiguration> {
   @override
-  Future<PageStackConfiguration> parseRouteInformation(RouteInformation routeInformation) async {
+  Future<PageStackConfiguration> parseRouteInformation(RouteInformation ri) async {
     return PageStackConfiguration(pageConfigurations: [BookListPageConfiguration()]);
   }
 }

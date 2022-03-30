@@ -9,6 +9,13 @@ void main() {
 
 class HomePageConfiguration extends PageConfiguration {
   HomePageConfiguration() : super(key: 'Home');
+
+  @override
+  RouteInformation restoreRouteInformation() {
+    return const RouteInformation(
+      location: '/',
+    );
+  }
 }
 
 class HomePage extends StatelessMaterialPage<HomePageConfiguration> {
