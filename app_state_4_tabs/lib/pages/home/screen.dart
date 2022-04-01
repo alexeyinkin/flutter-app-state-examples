@@ -23,11 +23,11 @@ class HomeScreen extends StatelessWidget {
     final tab = TabEnum.values.byName(bloc.currentStackKey!);
 
     return Scaffold(
-      body: KeyedStack(
+      body: KeyedStack<TabEnum>(
         itemKey: tab,
-        children: bloc.pageStacks.map((tab, bloc) => MapEntry(
-          TabEnum.values.byName(tab),
-          PageStackBlocNavigator(key: ValueKey(tab), bloc: bloc)),
+        children: bloc.pageStacks.map((tabString, bloc) => MapEntry(
+          TabEnum.values.byName(tabString),
+          PageStackBlocNavigator(key: ValueKey(tabString), bloc: bloc)),
         ),
       ),
       bottomNavigationBar: KeyedBottomNavigationBar<TabEnum>(

@@ -10,7 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  app_state: ^0.3.0
+  app_state: ^0.3.1
   keyed_collection_widgets: ^0.2.0
 
 dev_dependencies:

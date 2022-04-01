@@ -1,6 +1,7 @@
 import 'package:app_state/app_state.dart';
 import 'package:flutter/widgets.dart';
 
+import '../pages/about/configurations.dart';
 import '../pages/book_details/configurations.dart';
 import '../pages/book_list/configurations.dart';
 
@@ -12,6 +13,7 @@ class MyRouteInformationParser extends PageStacksRouteInformationParser {
 
   PageConfiguration _parseTopPageConfiguration(RouteInformation ri) {
     return
+        AboutPageConfiguration.tryParse(ri) ??
         BookDetailsPageConfiguration.tryParse(ri) ??
         BookListPageConfiguration.tryParse(ri) ?? // Optional, it's the default page.
 
