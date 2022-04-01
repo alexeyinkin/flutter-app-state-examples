@@ -34,7 +34,7 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-class AppRouteInformationParser extends RouteInformationParser<PageStackConfiguration> {
+class MyRouteInformationParser extends RouteInformationParser<PageStackConfiguration> {
   @override
   Future<PageStackConfiguration> parseRouteInformation(RouteInformation routeInformation) async {
     return PageStackConfiguration(pageConfigurations: [HomePageConfiguration()]);
@@ -48,7 +48,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   final _routerDelegate = PageStackRouterDelegate(pageStackBloc);
-  final _routeInformationParser = AppRouteInformationParser();
+  final _routeInformationParser = MyRouteInformationParser();
 
   @override
   Widget build(BuildContext context) {

@@ -10,7 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  app_state: ^0.2.1
+  app_state: ^0.3.0
 
 dev_dependencies:
   flutter_test:

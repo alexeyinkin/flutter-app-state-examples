@@ -4,7 +4,7 @@ import 'package:flutter/widgets.dart';
 import '../pages/book_details/configurations.dart';
 import '../pages/book_list/configurations.dart';
 
-class AppRouteInformationParser extends PageStackRouteInformationParser {
+class MyRouteInformationParser extends PageStackRouteInformationParser {
   @override
   Future<PageStackConfiguration> parseRouteInformation(RouteInformation ri) async {
     return _parseTopPageConfiguration(ri).defaultStackConfiguration;

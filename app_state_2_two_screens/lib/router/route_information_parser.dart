@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 
 import '../pages/book_list/configurations.dart';
 
-class AppRouteInformationParser extends RouteInformationParser<PageStackConfiguration> {
+class MyRouteInformationParser extends RouteInformationParser<PageStackConfiguration> {
   @override
   Future<PageStackConfiguration> parseRouteInformation(RouteInformation ri) async {
     return PageStackConfiguration(pageConfigurations: [BookListPageConfiguration()]);

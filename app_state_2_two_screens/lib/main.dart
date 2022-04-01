@@ -17,7 +17,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   final _routerDelegate = PageStackRouterDelegate(pageStackBloc);
-  final _routeInformationParser = AppRouteInformationParser();
+  final _routeInformationParser = MyRouteInformationParser();
   final _backButtonDispatcher = PageStackBackButtonDispatcher(pageStackBloc);
 
   @override

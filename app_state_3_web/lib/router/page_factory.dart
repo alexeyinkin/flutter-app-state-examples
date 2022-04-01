@@ -5,10 +5,10 @@ import '../pages/book_list/page.dart';
 
 class PageFactory {
   static AbstractPage<PageConfiguration>? createPage(
-    String key,
+    String factoryKey,
     Map<String, dynamic> state,
   ) {
-    switch (key) {
+    switch (factoryKey) {
       case BookDetailsPage.factoryKey: return BookDetailsPage(bookId: state['bookId']);
       case BookListPage.factoryKey: return BookListPage();
     }
