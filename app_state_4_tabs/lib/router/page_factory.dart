@@ -5,14 +5,14 @@ import '../pages/book_details/page.dart';
 import '../pages/book_list/page.dart';
 
 class PageFactory {
-  static AbstractPage<PageConfiguration>? createPage(
+  static AbstractPage<PageConfiguration, dynamic>? createPage(
     String factoryKey,
     Map<String, dynamic> state,
   ) {
     switch (factoryKey) {
-      case AboutPage.factoryKey: return AboutPage();
-      case BookDetailsPage.factoryKey: return BookDetailsPage(bookId: state['bookId']);
-      case BookListPage.factoryKey: return BookListPage();
+      case AboutPage.classFactoryKey: return AboutPage();
+      case BookDetailsPage.classFactoryKey: return BookDetailsPage(bookId: state['bookId']);
+      case BookListPage.classFactoryKey: return BookListPage();
     }
 
     return null;

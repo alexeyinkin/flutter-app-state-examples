@@ -14,7 +14,7 @@ class BookDetailsPageConfiguration extends PageConfiguration {
     required this.bookId,
   }) : super(
     key: BookDetailsPage.formatKey(bookId: bookId),
-    factoryKey: BookDetailsPage.factoryKey,
+    factoryKey: BookDetailsPage.classFactoryKey,
     state: {'bookId': bookId},
   );
 

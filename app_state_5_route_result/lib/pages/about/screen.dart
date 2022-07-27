@@ -5,7 +5,7 @@ import 'bloc.dart';
 class AboutScreen extends StatelessWidget {
   final AboutPageBloc bloc;
 
-  AboutScreen({required this.bloc});
+  const AboutScreen({required this.bloc});
 
   @override
   Widget build(BuildContext context) {

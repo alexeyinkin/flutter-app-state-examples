@@ -1,11 +1,10 @@
 import 'package:app_state/app_state.dart';
 import 'package:app_state_5_route_result/pages/about/configurations.dart';
 
-import '../input/events.dart';
 import '../input/page.dart';
 import '../../main.dart';
 
-class AboutPageBloc extends PageStatefulBloc<PageConfiguration, AboutPageBlocState> {
+class AboutPageBloc extends PageStatefulBloc<PageConfiguration, AboutPageBlocState, void> {
   String _name;
   final AboutPageBlocState initialState;
 
@@ -15,16 +14,21 @@ class AboutPageBloc extends PageStatefulBloc<PageConfiguration, AboutPageBlocSta
       _name = name,
       initialState = AboutPageBlocState(name: name);
 
-  void onLicensePressed() {
-    pageStacksBloc.currentStackBloc?.push(
+  Future<void> onLicensePressed() async {
+    final result = await pageStacksBloc.currentStackBloc?.push(
       InputPage(name: _name),
     );
+
+    print('Awaited: $result');
   }
 
   @override
-  void onForegroundClosed(PageBlocCloseEvent event) {
-    if (event is InputSaveEvent) {
-      _name = event.name;
+  void didPopNext(AbstractPage page, PageBlocCloseEvent event) {
+    print('didPopNext: ${event.data}');
+
+    final data = event.data;
+    if (data is String) {
+      _name = data;
       emitState();
     }
   }
@@ -35,7 +39,7 @@ class AboutPageBloc extends PageStatefulBloc<PageConfiguration, AboutPageBlocSta
   }
 
   @override
-  AboutPageConfiguration getConfiguration() => AboutPageConfiguration();
+  AboutPageConfiguration getConfiguration() => const AboutPageConfiguration();
 }
 
 class AboutPageBlocState {

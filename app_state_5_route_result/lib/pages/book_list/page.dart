@@ -5,11 +5,11 @@ import 'bloc.dart';
 import 'configurations.dart';
 import 'screen.dart';
 
-class BookListPage extends BlocMaterialPage<BookListPageConfiguration, BookListBloc> {
-  static const factoryKey = 'BookList';
+class BookListPage extends BlocMaterialPage<BookListPageConfiguration, void, BookListBloc> {
+  static const classFactoryKey = 'BookList';
 
   BookListPage() : super(
-    key: const ValueKey(factoryKey),
+    key: const ValueKey(classFactoryKey),
     bloc: BookListBloc(),
     createScreen: (b) => BookListScreen(bloc: b),
   );

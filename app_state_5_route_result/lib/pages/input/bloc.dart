@@ -2,9 +2,8 @@ import 'package:app_state/app_state.dart';
 import 'package:flutter/widgets.dart';
 
 import 'configurations.dart';
-import 'events.dart';
 
-class InputPageBloc extends PageStatefulBloc<InputPageConfiguration, InputPageBlocState> {
+class InputPageBloc extends PageStatefulBloc<InputPageConfiguration, InputPageBlocState, String> {
   final nameController = TextEditingController();
   final initialState = InputPageBlocState(canSave: false);
 
@@ -17,9 +16,7 @@ class InputPageBloc extends PageStatefulBloc<InputPageConfiguration, InputPageBl
   }
 
   void onSavePressed() {
-    closeScreenWith(
-      InputSaveEvent(name: nameController.text),
-    );
+    pop(nameController.text);
   }
 
   @override

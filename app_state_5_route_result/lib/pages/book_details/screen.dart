@@ -5,7 +5,7 @@ import '../../models/book.dart';
 class BookDetailsScreen extends StatelessWidget {
   final Book book;
 
-  BookDetailsScreen({
+  const BookDetailsScreen({
     required this.book,
   });
 

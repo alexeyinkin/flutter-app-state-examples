@@ -7,9 +7,7 @@ import '../../router/tab_enum.dart';
 class HomeScreen extends StatelessWidget {
   final PageStacksBloc bloc;
 
-  HomeScreen({
-    required this.bloc,
-  });
+  const HomeScreen({required this.bloc});
 
   @override
   Widget build(BuildContext context) {

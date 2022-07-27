@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 
 import 'configurations.dart';
 
-class AboutPage extends StatelessMaterialPage<PageConfiguration> {
-  static const factoryKey = 'About';
+class AboutPage extends StatelessMaterialPage<PageConfiguration, void> {
+  static const classFactoryKey = 'About';
 
   AboutPage() : super(
-    key: const ValueKey(factoryKey),
+    key: const ValueKey(classFactoryKey),
     child: Scaffold(appBar: AppBar(title: const Text('About'))),
     configuration: const AboutPageConfiguration(),
   );

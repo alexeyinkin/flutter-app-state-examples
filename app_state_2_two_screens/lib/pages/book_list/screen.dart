@@ -5,9 +5,7 @@ import 'bloc.dart';
 class BookListScreen extends StatelessWidget {
   final BookListBloc bloc;
 
-  BookListScreen({
-    required this.bloc,
-  });
+  const BookListScreen({required this.bloc});
 
   @override
   Widget build(BuildContext context) {

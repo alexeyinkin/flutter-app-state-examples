@@ -5,7 +5,7 @@ import 'bloc.dart';
 import 'configurations.dart';
 import 'screen.dart';
 
-class BookListPage extends BlocMaterialPage<BookListPageConfiguration, BookListBloc> {
+class BookListPage extends BlocMaterialPage<BookListPageConfiguration, void, BookListBloc> {
   BookListPage() : super(
     key: const ValueKey('BookList'),
     bloc: BookListBloc(),

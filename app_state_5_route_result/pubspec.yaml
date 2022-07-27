@@ -4,14 +4,19 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.16.1 <3.0.0"
+  sdk: ">=2.17.0 <3.0.0"
+  flutter: ">=3.0.0 <4.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
-  app_state: ^0.3.1
-  keyed_collection_widgets: ^0.2.0
+  app_state: ^0.5.0
+  keyed_collection_widgets: ^0.3.2
+
+#dependency_overrides:
+#  app_state:
+#    path: ../../flutter-app-state
 
 dev_dependencies:
   flutter_test:

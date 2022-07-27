@@ -18,7 +18,7 @@ class HomePageConfiguration extends PageConfiguration {
   }
 }
 
-class HomePage extends StatelessMaterialPage<HomePageConfiguration> {
+class HomePage extends StatelessMaterialPage<HomePageConfiguration, void> {
   HomePage() : super(
     key: const ValueKey('Home'),
     child: HomeScreen(),

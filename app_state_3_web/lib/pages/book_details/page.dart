@@ -6,8 +6,8 @@ import '../../book_repository.dart';
 import 'configurations.dart';
 import 'screen.dart';
 
-class BookDetailsPage extends StatelessMaterialPage<PageConfiguration> {
-  static const factoryKey = 'BookDetails';
+class BookDetailsPage extends StatelessMaterialPage<PageConfiguration, void> {
+  static const classFactoryKey = 'BookDetails';
 
   BookDetailsPage({
     required int bookId,
@@ -18,6 +18,6 @@ class BookDetailsPage extends StatelessMaterialPage<PageConfiguration> {
   );
 
   static String formatKey({required int bookId}) {
-    return '${factoryKey}_$bookId';
+    return '${classFactoryKey}_$bookId';
   }
 }

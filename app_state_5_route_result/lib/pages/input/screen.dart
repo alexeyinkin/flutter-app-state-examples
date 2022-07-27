@@ -5,7 +5,7 @@ import 'bloc.dart';
 class InputScreen extends StatelessWidget {
   final InputPageBloc bloc;
 
-  InputScreen({required this.bloc});
+  const InputScreen({required this.bloc});
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,7 @@ class InputScreen extends StatelessWidget {
               children: [
                 ElevatedButton(
                   child: const Text('Cancel'),
-                  onPressed: bloc.closeScreen,
+                  onPressed: bloc.pop,
                 ),
                 Container(width: 20),
                 ElevatedButton(

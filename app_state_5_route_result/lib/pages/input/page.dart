@@ -5,11 +5,11 @@ import 'bloc.dart';
 import 'configurations.dart';
 import 'screen.dart';
 
-class InputPage extends BlocMaterialPage<InputPageConfiguration, InputPageBloc> {
-  static const factoryKey = 'Input';
+class InputPage extends BlocMaterialPage<InputPageConfiguration, String, InputPageBloc> {
+  static const classFactoryKey = 'Input';
 
   InputPage({required String name}) : super(
-    key: const ValueKey(factoryKey),
+    key: const ValueKey(classFactoryKey),
     bloc: InputPageBloc(name: name),
     createScreen: (b) => InputScreen(bloc: b),
   );

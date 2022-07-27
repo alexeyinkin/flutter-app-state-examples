@@ -5,7 +5,7 @@ import '../../models/book.dart';
 
 import 'screen.dart';
 
-class BookDetailsPage extends StatelessMaterialPage<PageConfiguration> {
+class BookDetailsPage extends StatelessMaterialPage<PageConfiguration, void> {
   BookDetailsPage({
     required Book book,
   }) : super(

@@ -5,7 +5,7 @@ import '../../models/book.dart';
 import '../book_details/page.dart';
 import 'configurations.dart';
 
-class BookListBloc extends PageBloc<BookListPageConfiguration> {
+class BookListBloc extends PageBloc<BookListPageConfiguration, void> {
   final books = [
     Book(1, 'Stranger in a Strange Land', 'Robert A. Heinlein'),
     Book(2, 'Foundation', 'Isaac Asimov'),
