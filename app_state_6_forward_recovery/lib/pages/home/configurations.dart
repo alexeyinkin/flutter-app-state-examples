@@ -7,11 +7,7 @@ class HomePageConfiguration extends PageConfiguration {
   const HomePageConfiguration() : super(key: 'Home');
 
   @override
-  RouteInformation restoreRouteInformation() {
-    return const RouteInformation(
-      location: _location,
-    );
-  }
+  String get location => _location;
 
   static HomePageConfiguration? tryParse(RouteInformation ri) {
     return ri.location == _location

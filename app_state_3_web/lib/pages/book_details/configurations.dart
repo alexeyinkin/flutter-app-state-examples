@@ -18,11 +18,7 @@ class BookDetailsPageConfiguration extends PageConfiguration {
   );
 
   @override
-  RouteInformation restoreRouteInformation() {
-    return RouteInformation(
-      location: '/books/$bookId',
-    );
-  }
+  String get location => '/books/$bookId';
 
   static BookDetailsPageConfiguration? tryParse(RouteInformation ri) {
     final matches = _regExp.firstMatch(ri.location ?? '');

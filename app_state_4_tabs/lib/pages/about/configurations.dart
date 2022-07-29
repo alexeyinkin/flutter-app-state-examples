@@ -9,11 +9,7 @@ class AboutPageConfiguration extends PageConfiguration {
   const AboutPageConfiguration() : super(key: 'About');
 
   @override
-  RouteInformation restoreRouteInformation() {
-    return const RouteInformation(
-      location: _location,
-    );
-  }
+  String get location => _location;
 
   static AboutPageConfiguration? tryParse(RouteInformation ri) {
     return ri.location == _location

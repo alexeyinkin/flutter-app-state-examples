@@ -7,11 +7,7 @@ class BookListPageConfiguration extends PageConfiguration {
   const BookListPageConfiguration() : super(key: 'BookList');
 
   @override
-  RouteInformation restoreRouteInformation() {
-    return const RouteInformation(
-      location: _location,
-    );
-  }
+  String get location => _location;
 
   static BookListPageConfiguration? tryParse(RouteInformation ri) {
     return ri.location == _location

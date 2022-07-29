@@ -18,12 +18,7 @@ class InputPageConfiguration extends PageConfiguration {
   );
 
   @override
-  RouteInformation restoreRouteInformation() {
-    return RouteInformation(
-      location: '/input',
-      state: state,
-    );
-  }
+  get location => _location;
 
   static InputPageConfiguration? tryParse(RouteInformation ri) {
     if (ri.location != _location) {
@@ -37,12 +32,8 @@ class InputPageConfiguration extends PageConfiguration {
   }
 
   @override
-  PageStackConfiguration get defaultStackConfiguration {
-    return PageStackConfiguration(
-      pageConfigurations: [
-        const HomePageConfiguration(),
-        this,
-      ],
-    );
-  }
+  get defaultStackConfigurations => [
+    const HomePageConfiguration(),
+    this,
+  ];
 }

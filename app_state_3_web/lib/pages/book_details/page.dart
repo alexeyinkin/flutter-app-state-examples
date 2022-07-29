@@ -2,7 +2,6 @@ import 'package:app_state/app_state.dart';
 import 'package:flutter/foundation.dart';
 
 import '../../book_repository.dart';
-
 import 'configurations.dart';
 import 'screen.dart';
 

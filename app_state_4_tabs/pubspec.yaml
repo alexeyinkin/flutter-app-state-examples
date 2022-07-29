@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  app_state: ^0.5.0
+  app_state: ^0.5.1
   keyed_collection_widgets: ^0.3.2
 
 #dependency_overrides:

@@ -1,9 +1,9 @@
 import 'package:app_state/app_state.dart';
 import 'package:flutter/widgets.dart';
 
-import 'page.dart';
-import '../book_list/configurations.dart';
 import '../../router/tab_enum.dart';
+import '../book_list/configurations.dart';
+import 'page.dart';
 
 class BookDetailsPageConfiguration extends PageConfiguration {
   final int bookId;
@@ -19,11 +19,7 @@ class BookDetailsPageConfiguration extends PageConfiguration {
   );
 
   @override
-  RouteInformation restoreRouteInformation() {
-    return RouteInformation(
-      location: '/books/$bookId',
-    );
-  }
+  String get location => '/books/$bookId';
 
   static BookDetailsPageConfiguration? tryParse(RouteInformation ri) {
     final matches = _regExp.firstMatch(ri.location ?? '');
@@ -41,14 +37,10 @@ class BookDetailsPageConfiguration extends PageConfiguration {
   }
 
   @override
-  PageStackConfiguration get defaultStackConfiguration {
-    return PageStackConfiguration(
-      pageConfigurations: [
-        const BookListPageConfiguration(),
-        this,
-      ],
-    );
-  }
+  get defaultStackConfigurations =>[
+    const BookListPageConfiguration(),
+    this,
+  ];
 
   @override
   String get defaultStackKey => TabEnum.books.name;
