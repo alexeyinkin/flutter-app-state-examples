@@ -4,7 +4,7 @@ import '../pages/book_details/page.dart';
 import '../pages/book_list/page.dart';
 
 class PageFactory {
-  static AbstractPage<PageConfiguration, dynamic>? createPage(
+  static AbstractPage? createPage(
     String factoryKey,
     Map<String, dynamic> state,
   ) {

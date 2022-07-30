@@ -6,13 +6,9 @@ import '../pages/input/configurations.dart';
 
 class MyRouteInformationParser extends PageStackRouteInformationParser {
   @override
-  Future<PageStackConfiguration> parseRouteInformation(RouteInformation ri) async {
-    return _parseTopPageConfiguration(ri).defaultStackConfiguration;
-  }
-
-  PageConfiguration _parseTopPageConfiguration(RouteInformation ri) {
+  Future<PageConfiguration> parsePageConfiguration(RouteInformation ri) async {
     return
         InputPageConfiguration.tryParse(ri) ??
-        const HomePageConfiguration();
+        const HomePageConfiguration(); // The default page if nothing worked.
   }
 }

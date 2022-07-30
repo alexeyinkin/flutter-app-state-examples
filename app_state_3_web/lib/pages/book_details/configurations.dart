@@ -36,12 +36,8 @@ class BookDetailsPageConfiguration extends PageConfiguration {
   }
 
   @override
-  PageStackConfiguration get defaultStackConfiguration {
-    return PageStackConfiguration(
-      pageConfigurations: [
-        const BookListPageConfiguration(),
-        this,
-      ],
-    );
-  }
+  get defaultStackConfigurations => [
+    const BookListPageConfiguration(),
+    this,
+  ];
 }

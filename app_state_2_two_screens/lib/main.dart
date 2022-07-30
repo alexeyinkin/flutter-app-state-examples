@@ -2,29 +2,21 @@ import 'package:app_state/app_state.dart';
 import 'package:flutter/material.dart';
 
 import 'pages/book_list/page.dart';
-import 'router/route_information_parser.dart';
 
-final pageStackBloc = PageStackBloc<PageConfiguration>(bottomPage: BookListPage());
+final pageStackBloc = PageStackBloc(bottomPage: BookListPage());
+final _routerDelegate = PageStackRouterDelegate(pageStackBloc);
+final _backButtonDispatcher = PageStackBackButtonDispatcher(pageStackBloc);
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(const MyApp());
 
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  final _routerDelegate = PageStackRouterDelegate(pageStackBloc);
-  final _routeInformationParser = MyRouteInformationParser();
-  final _backButtonDispatcher = PageStackBackButtonDispatcher(pageStackBloc);
+class MyApp extends StatelessWidget {
+  const MyApp();
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
       routerDelegate: _routerDelegate,
-      routeInformationParser: _routeInformationParser,
+      routeInformationParser: const PageStackRouteInformationParser(),
       backButtonDispatcher: _backButtonDispatcher,
     );
   }

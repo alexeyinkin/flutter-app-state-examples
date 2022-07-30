@@ -2,10 +2,9 @@ import 'package:app_state/app_state.dart';
 import 'package:flutter/foundation.dart';
 
 import 'bloc.dart';
-import 'configurations.dart';
 import 'screen.dart';
 
-class InputPage extends BlocMaterialPage<InputPageConfiguration, String, InputPageBloc> {
+class InputPage extends BlocMaterialPage<String, InputPageBloc> {
   static const classFactoryKey = 'Input';
 
   InputPage({required String name}) : super(

@@ -4,7 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'configurations.dart';
 import 'screen.dart';
 
-class HomePage extends StatelessMaterialPage<HomePageConfiguration, void> {
+class HomePage extends StatelessMaterialPage {
   static const classFactoryKey = 'Home';
 
   HomePage() : super(

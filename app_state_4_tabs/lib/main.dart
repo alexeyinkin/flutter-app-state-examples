@@ -13,7 +13,7 @@ final pageStacksBloc = PageStacksBloc();
 void main() {
   pageStacksBloc.addPageStack(
     TabEnum.books.name,
-    PageStackBloc<PageConfiguration>(
+    PageStackBloc(
       bottomPage: BookListPage(),
       createPage: PageFactory.createPage,
     ),
@@ -21,7 +21,7 @@ void main() {
 
   pageStacksBloc.addPageStack(
     TabEnum.about.name,
-    PageStackBloc<PageConfiguration>(
+    PageStackBloc(
       bottomPage: AboutPage(),
       createPage: PageFactory.createPage,
     ),

@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 
 import 'configurations.dart';
 
-class InputPageBloc extends PageStatefulBloc<InputPageConfiguration, InputPageBlocState, String> {
+class InputPageBloc extends PageStatefulBloc<InputPageBlocState, String> {
   final nameController = TextEditingController();
   final initialState = InputPageBlocState(canSave: false);
 
@@ -27,7 +27,7 @@ class InputPageBloc extends PageStatefulBloc<InputPageConfiguration, InputPageBl
   }
 
   @override
-  InputPageConfiguration getConfiguration() => const InputPageConfiguration();
+  getConfiguration() => const InputPageConfiguration();
 }
 
 class InputPageBlocState {

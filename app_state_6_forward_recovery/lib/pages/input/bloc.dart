@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 
 import 'configurations.dart';
 
-class InputBloc extends PageBloc<PageConfiguration, void> {
+class InputBloc extends PageBloc {
   final controller = TextEditingController();
 
   InputBloc() {

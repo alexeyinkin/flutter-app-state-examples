@@ -5,7 +5,7 @@ import 'pages/book_list/page.dart';
 import 'router/page_factory.dart';
 import 'router/route_information_parser.dart';
 
-final pageStackBloc = PageStackBloc<PageConfiguration>(
+final pageStackBloc = PageStackBloc(
   bottomPage: BookListPage(),
   createPage: PageFactory.createPage,
 );

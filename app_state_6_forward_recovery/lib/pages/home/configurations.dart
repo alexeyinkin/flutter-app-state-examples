@@ -8,10 +8,4 @@ class HomePageConfiguration extends PageConfiguration {
 
   @override
   String get location => _location;
-
-  static HomePageConfiguration? tryParse(RouteInformation ri) {
-    return ri.location == _location
-        ? const HomePageConfiguration()
-        : null;
-  }
 }

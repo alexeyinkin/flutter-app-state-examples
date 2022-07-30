@@ -5,11 +5,11 @@ import '../../models/book.dart';
 import '../book_details/page.dart';
 import 'configurations.dart';
 
-class BookListBloc extends PageBloc<BookListPageConfiguration, void> {
+class BookListBloc extends PageBloc {
   void showDetails(Book book) {
     pageStacksBloc.currentStackBloc?.push(BookDetailsPage(bookId: book.id));
   }
 
   @override
-  BookListPageConfiguration getConfiguration() => const BookListPageConfiguration();
+  getConfiguration() => const BookListPageConfiguration();
 }

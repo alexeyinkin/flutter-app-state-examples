@@ -21,14 +21,9 @@ class InputPageConfiguration extends PageConfiguration {
   get location => _location;
 
   static InputPageConfiguration? tryParse(RouteInformation ri) {
-    if (ri.location != _location) {
-      return null;
-    }
-
-    final state = ri.state;
-    return InputPageConfiguration(
-      text: state is Map ? state['text'] : '',
-    );
+    return ri.location == _location
+        ? InputPageConfiguration(text: '')
+        : null;
   }
 
   @override

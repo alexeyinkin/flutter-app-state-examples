@@ -3,9 +3,8 @@ import 'package:app_state/app_state.dart';
 import '../../main.dart';
 import '../../models/book.dart';
 import '../book_details/page.dart';
-import 'configurations.dart';
 
-class BookListBloc extends PageBloc<BookListPageConfiguration, void> {
+class BookListBloc extends PageBloc {
   final books = [
     Book(1, 'Stranger in a Strange Land', 'Robert A. Heinlein'),
     Book(2, 'Foundation', 'Isaac Asimov'),

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'configurations.dart';
 
-class AboutPage extends StatelessMaterialPage<PageConfiguration, void> {
+class AboutPage extends StatelessMaterialPage {
   static const classFactoryKey = 'About';
 
   AboutPage() : super(

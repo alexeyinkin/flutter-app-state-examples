@@ -5,7 +5,7 @@ import 'pages/home/page.dart';
 import 'router/page_factory.dart';
 import 'router/route_information_parser.dart';
 
-final pageStackBloc = PageStackBloc<PageConfiguration>(
+final pageStackBloc = PageStackBloc(
   bottomPage: HomePage(),
   createPage: PageFactory.createPage,
 );

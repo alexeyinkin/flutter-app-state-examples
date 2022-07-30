@@ -5,7 +5,7 @@ import '../../book_repository.dart';
 import 'configurations.dart';
 import 'screen.dart';
 
-class BookDetailsPage extends StatelessMaterialPage<PageConfiguration, void> {
+class BookDetailsPage extends StatelessMaterialPage {
   static const classFactoryKey = 'BookDetails';
 
   BookDetailsPage({

@@ -7,17 +7,10 @@ import '../pages/book_list/configurations.dart';
 
 class MyRouteInformationParser extends PageStacksRouteInformationParser {
   @override
-  Future<PageStacksConfiguration> parseRouteInformation(RouteInformation ri) async {
-    return _parseTopPageConfiguration(ri).defaultStacksConfiguration;
-  }
-
-  PageConfiguration _parseTopPageConfiguration(RouteInformation ri) {
+  Future<PageConfiguration> parsePageConfiguration(RouteInformation ri) async {
     return
         AboutPageConfiguration.tryParse(ri) ??
         BookDetailsPageConfiguration.tryParse(ri) ??
-        BookListPageConfiguration.tryParse(ri) ?? // Optional, it's the default page.
-
-        // The default page if nothing worked.
-        const BookListPageConfiguration();
+        const BookListPageConfiguration(); // The default page if nothing worked.
   }
 }
