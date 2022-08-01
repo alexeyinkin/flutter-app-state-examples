@@ -2,14 +2,14 @@ import 'package:app_state/app_state.dart';
 import 'package:flutter/widgets.dart';
 
 import 'page.dart';
-import '../home/configurations.dart';
+import '../home/path.dart';
 
-class InputPageConfiguration extends PageConfiguration {
+class InputPath extends PagePath {
   static const _location = '/input';
 
   final String text;
 
-  InputPageConfiguration({
+  InputPath({
     required this.text,
   }) : super(
     key: 'Input',
@@ -20,15 +20,15 @@ class InputPageConfiguration extends PageConfiguration {
   @override
   get location => _location;
 
-  static InputPageConfiguration? tryParse(RouteInformation ri) {
+  static InputPath? tryParse(RouteInformation ri) {
     return ri.location == _location
-        ? InputPageConfiguration(text: '')
+        ? InputPath(text: '')
         : null;
   }
 
   @override
-  get defaultStackConfigurations => [
-    const HomePageConfiguration(),
+  get defaultStackPaths => [
+    const HomePath(),
     this,
   ];
 }

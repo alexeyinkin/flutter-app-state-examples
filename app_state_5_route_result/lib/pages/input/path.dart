@@ -2,25 +2,25 @@ import 'package:app_state/app_state.dart';
 import 'package:flutter/widgets.dart';
 
 import '../../router/tab_enum.dart';
-import '../about/configurations.dart';
+import '../about/path.dart';
 
-class InputPageConfiguration extends PageConfiguration {
+class InputPath extends PagePath {
   static const _location = '/input';
 
-  const InputPageConfiguration() : super(key: 'Input');
+  const InputPath() : super(key: 'Input');
 
   @override
   String get location => _location;
 
-  static InputPageConfiguration? tryParse(RouteInformation ri) {
+  static InputPath? tryParse(RouteInformation ri) {
     return ri.location == _location
-        ? const InputPageConfiguration()
+        ? const InputPath()
         : null;
   }
 
   @override
-  get defaultStackConfigurations => [
-    const AboutPageConfiguration(),
+  get defaultStackPaths => [
+    const AboutPath(),
     this,
   ];
 

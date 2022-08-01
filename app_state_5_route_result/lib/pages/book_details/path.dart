@@ -1,15 +1,16 @@
 import 'package:app_state/app_state.dart';
 import 'package:flutter/widgets.dart';
 
+import '../../router/tab_enum.dart';
+import '../book_list/path.dart';
 import 'page.dart';
-import '../book_list/configurations.dart';
 
-class BookDetailsPageConfiguration extends PageConfiguration {
+class BookDetailsPath extends PagePath {
   final int bookId;
 
   static final _regExp = RegExp(r'^/books/(\d+)$');
 
-  BookDetailsPageConfiguration({
+  BookDetailsPath({
     required this.bookId,
   }) : super(
     key: BookDetailsPage.formatKey(bookId: bookId),
@@ -20,7 +21,7 @@ class BookDetailsPageConfiguration extends PageConfiguration {
   @override
   String get location => '/books/$bookId';
 
-  static BookDetailsPageConfiguration? tryParse(RouteInformation ri) {
+  static BookDetailsPath? tryParse(RouteInformation ri) {
     final matches = _regExp.firstMatch(ri.location ?? '');
     if (matches == null) return null;
 
@@ -30,14 +31,17 @@ class BookDetailsPageConfiguration extends PageConfiguration {
       return null; // Will never get here with present _regExp.
     }
 
-    return BookDetailsPageConfiguration(
+    return BookDetailsPath(
       bookId: bookId,
     );
   }
 
   @override
-  get defaultStackConfigurations => [
-    const BookListPageConfiguration(),
+  get defaultStackPaths => [
+    const BookListPath(),
     this,
   ];
+
+  @override
+  String get defaultStackKey => TabEnum.books.name;
 }

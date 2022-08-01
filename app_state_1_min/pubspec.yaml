@@ -13,9 +13,9 @@ dependencies:
 
   app_state: ^0.6.0
 
-#dependency_overrides:
-#  app_state:
-#    path: ../../flutter-app-state
+dependency_overrides:
+  app_state:
+    path: ../../flutter-app-state
 
 dev_dependencies:
   flutter_test:

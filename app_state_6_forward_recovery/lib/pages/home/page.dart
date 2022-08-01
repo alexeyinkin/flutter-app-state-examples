@@ -1,7 +1,7 @@
 import 'package:app_state/app_state.dart';
 import 'package:flutter/foundation.dart';
 
-import 'configurations.dart';
+import 'path.dart';
 import 'screen.dart';
 
 class HomePage extends StatelessMaterialPage {
@@ -11,6 +11,6 @@ class HomePage extends StatelessMaterialPage {
     key: const ValueKey(classFactoryKey),
     child: HomeScreen(),
     factoryKey: classFactoryKey,
-    configuration: const HomePageConfiguration(),
+    path: const HomePath(),
   );
 }

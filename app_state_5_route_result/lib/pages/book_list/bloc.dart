@@ -3,7 +3,7 @@ import 'package:app_state/app_state.dart';
 import '../../main.dart';
 import '../../models/book.dart';
 import '../book_details/page.dart';
-import 'configurations.dart';
+import 'path.dart';
 
 class BookListBloc extends PageBloc {
   void showDetails(Book book) {
@@ -11,5 +11,5 @@ class BookListBloc extends PageBloc {
   }
 
   @override
-  getConfiguration() => const BookListPageConfiguration();
+  BookListPath get path => const BookListPath();
 }

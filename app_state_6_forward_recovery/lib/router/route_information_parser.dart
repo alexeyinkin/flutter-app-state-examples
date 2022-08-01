@@ -1,14 +1,14 @@
 import 'package:app_state/app_state.dart';
 import 'package:flutter/widgets.dart';
 
-import '../pages/home/configurations.dart';
-import '../pages/input/configurations.dart';
+import '../pages/home/path.dart';
+import '../pages/input/path.dart';
 
 class MyRouteInformationParser extends PageStackRouteInformationParser {
   @override
-  Future<PageConfiguration> parsePageConfiguration(RouteInformation ri) async {
+  Future<PagePath> parsePagePath(RouteInformation ri) async {
     return
-        InputPageConfiguration.tryParse(ri) ??
-        const HomePageConfiguration(); // The default page if nothing worked.
+        InputPath.tryParse(ri) ??
+        const HomePath(); // The default page if nothing worked.
   }
 }

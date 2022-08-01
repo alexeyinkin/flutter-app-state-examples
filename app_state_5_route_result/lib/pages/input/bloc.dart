@@ -1,7 +1,7 @@
 import 'package:app_state/app_state.dart';
 import 'package:flutter/widgets.dart';
 
-import 'configurations.dart';
+import 'path.dart';
 
 class InputPageBloc extends PageStatefulBloc<InputPageBlocState, String> {
   final nameController = TextEditingController();
@@ -27,7 +27,7 @@ class InputPageBloc extends PageStatefulBloc<InputPageBlocState, String> {
   }
 
   @override
-  getConfiguration() => const InputPageConfiguration();
+  InputPath get path => const InputPath();
 }
 
 class InputPageBlocState {

@@ -7,7 +7,7 @@ packages:
       path: "../../flutter-app-state"
       relative: true
     source: path
-    version: "0.5.1"
+    version: "0.6.2"
   async:
     dependency: transitive
     description:

@@ -2,7 +2,7 @@ import 'package:app_state/app_state.dart';
 import 'package:flutter/foundation.dart';
 
 import '../../book_repository.dart';
-import 'configurations.dart';
+import 'path.dart';
 import 'screen.dart';
 
 class BookDetailsPage extends StatelessMaterialPage {
@@ -13,7 +13,7 @@ class BookDetailsPage extends StatelessMaterialPage {
   }) : super(
     key: ValueKey(formatKey(bookId: bookId)),
     child: BookDetailsScreen(book: bookRepository[bookId]),
-    configuration: BookDetailsPageConfiguration(bookId: bookId),
+    path: BookDetailsPath(bookId: bookId),
   );
 
   static String formatKey({required int bookId}) {

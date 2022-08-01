@@ -3,17 +3,17 @@ import 'package:flutter/widgets.dart';
 
 import '../../router/tab_enum.dart';
 
-class AboutPageConfiguration extends PageConfiguration {
+class AboutPath extends PagePath {
   static const _location = '/about';
 
-  const AboutPageConfiguration() : super(key: 'About');
+  const AboutPath() : super(key: 'About');
 
   @override
   String get location => _location;
 
-  static AboutPageConfiguration? tryParse(RouteInformation ri) {
+  static AboutPath? tryParse(RouteInformation ri) {
     return ri.location == _location
-        ? const AboutPageConfiguration()
+        ? const AboutPath()
         : null;
   }
 

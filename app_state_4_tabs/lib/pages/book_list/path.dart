@@ -3,17 +3,17 @@ import 'package:flutter/widgets.dart';
 
 import '../../router/tab_enum.dart';
 
-class BookListPageConfiguration extends PageConfiguration {
+class BookListPath extends PagePath {
   static const _location = '/books';
 
-  const BookListPageConfiguration() : super(key: 'BookList');
+  const BookListPath() : super(key: 'BookList');
 
   @override
   String get location => _location;
 
-  static BookListPageConfiguration? tryParse(RouteInformation ri) {
+  static BookListPath? tryParse(RouteInformation ri) {
     return ri.location == _location
-        ? const BookListPageConfiguration()
+        ? const BookListPath()
         : null;
   }
 

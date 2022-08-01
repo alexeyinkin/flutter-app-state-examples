@@ -1,17 +1,17 @@
 import 'package:app_state/app_state.dart';
 import 'package:flutter/widgets.dart';
 
-import 'configurations.dart';
+import 'path.dart';
 
 class InputBloc extends PageBloc {
   final controller = TextEditingController();
 
   InputBloc() {
-    controller.addListener(emitConfigurationChanged);
+    controller.addListener(emitPathChanged);
   }
 
   @override
-  InputPageConfiguration getConfiguration() => InputPageConfiguration(
+  InputPath get path => InputPath(
     text: controller.text,
   );
 

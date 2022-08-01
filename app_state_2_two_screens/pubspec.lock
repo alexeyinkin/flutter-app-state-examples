@@ -4,10 +4,10 @@ packages:
   app_state:
     dependency: "direct main"
     description:
-      name: app_state
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.6.0"
+      path: "../../flutter-app-state"
+      relative: true
+    source: path
+    version: "0.6.2"
   async:
     dependency: transitive
     description:

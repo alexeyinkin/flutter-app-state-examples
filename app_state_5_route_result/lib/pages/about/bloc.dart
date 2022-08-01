@@ -2,7 +2,7 @@ import 'package:app_state/app_state.dart';
 
 import '../../main.dart';
 import '../input/page.dart';
-import 'configurations.dart';
+import 'path.dart';
 
 class AboutPageBloc extends PageStatefulBloc<AboutPageBlocState, void> {
   String _name;
@@ -39,7 +39,7 @@ class AboutPageBloc extends PageStatefulBloc<AboutPageBlocState, void> {
   }
 
   @override
-  getConfiguration() => const AboutPageConfiguration();
+  AboutPath get path => const AboutPath();
 }
 
 class AboutPageBlocState {
