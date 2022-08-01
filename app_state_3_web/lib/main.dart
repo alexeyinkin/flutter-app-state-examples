@@ -9,21 +9,13 @@ final pageStackBloc = PageStackBloc(
   bottomPage: BookListPage(),
   createPage: PageFactory.createPage,
 );
+final _routerDelegate = PageStackRouterDelegate(pageStackBloc);
+final _routeInformationParser = MyRouteInformationParser();
+final _backButtonDispatcher = PageStackBackButtonDispatcher(pageStackBloc);
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  final _routerDelegate = PageStackRouterDelegate(pageStackBloc);
-  final _routeInformationParser = MyRouteInformationParser();
-  final _backButtonDispatcher = PageStackBackButtonDispatcher(pageStackBloc);
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(

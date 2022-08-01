@@ -37,7 +37,7 @@ class BookDetailsPath extends PagePath {
   }
 
   @override
-  get defaultStackPaths =>[
+  get defaultStackPaths => [
     const BookListPath(),
     this,
   ];

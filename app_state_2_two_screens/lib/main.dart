@@ -7,11 +7,9 @@ final pageStackBloc = PageStackBloc(bottomPage: BookListPage());
 final _routerDelegate = PageStackRouterDelegate(pageStackBloc);
 final _backButtonDispatcher = PageStackBackButtonDispatcher(pageStackBloc);
 
-void main() => runApp(const MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp();
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(

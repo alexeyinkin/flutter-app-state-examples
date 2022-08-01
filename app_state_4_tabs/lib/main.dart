@@ -3,12 +3,18 @@ import 'package:flutter/material.dart';
 
 import 'pages/about/page.dart';
 import 'pages/book_list/page.dart';
+import 'pages/home/screen.dart';
 import 'router/page_factory.dart';
 import 'router/route_information_parser.dart';
-import 'router/router_delegate.dart';
 import 'router/tab_enum.dart';
 
 final pageStacksBloc = PageStacksBloc();
+final _routerDelegate = MaterialPageStacksRouterDelegate(
+  pageStacksBloc: pageStacksBloc,
+  child: HomeScreen(bloc: pageStacksBloc),
+);
+final _routeInformationParser = MyRouteInformationParser();
+final _backButtonDispatcher = PageStacksBackButtonDispatcher(pageStacksBloc);
 
 void main() {
   pageStacksBloc.addPageStack(
@@ -32,16 +38,7 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  final _routerDelegate = MyRouterDelegate(pageStacksBloc);
-  final _routeInformationParser = MyRouteInformationParser();
-  final _backButtonDispatcher = PageStacksBackButtonDispatcher(pageStacksBloc);
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(

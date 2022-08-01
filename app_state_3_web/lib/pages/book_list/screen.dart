@@ -14,7 +14,7 @@ class BookListScreen extends StatelessWidget {
       appBar: AppBar(title: const Text('Home')),
       body: ListView(
         children: [
-          for (var book in bookRepository)
+          for (final book in bookRepository)
             ListTile(
               title: Text(book.title),
               subtitle: Text(book.author),
