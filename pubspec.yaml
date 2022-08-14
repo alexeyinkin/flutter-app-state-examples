@@ -8,7 +8,7 @@ environment:
   flutter: ">=3.0.0"
 
 dependencies:
-  app_state: ^0.6.9
+  app_state: ^0.6.10
   flutter: { sdk: flutter }
   keyed_collection_widgets: ^0.3.2
   url_launcher: ^6.1.5

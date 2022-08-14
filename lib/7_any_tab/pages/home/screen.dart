@@ -25,7 +25,7 @@ class HomeScreen extends StatelessWidget {
         itemKey: tab,
         children: bloc.pageStacks.map((tabString, bloc) => MapEntry(
           TabEnum.values.byName(tabString),
-          PageStackBlocNavigator(key: ValueKey(tabString), bloc: bloc)),
+          PageStackNavigator(key: ValueKey(tabString), bloc: bloc)),
         ),
       ),
       bottomNavigationBar: KeyedBottomNavigationBar<TabEnum>(
