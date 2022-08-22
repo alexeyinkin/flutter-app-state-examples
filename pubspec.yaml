@@ -8,7 +8,8 @@ environment:
   flutter: ">=3.0.0"
 
 dependencies:
-  app_state: ^0.6.10
+  app_state: ^0.7.0
+  bloc: ^8.1.0
   enum_map: ^0.1.0
   flutter: { sdk: flutter }
   keyed_collection_widgets: ^0.3.2

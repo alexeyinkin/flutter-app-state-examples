@@ -5,13 +5,13 @@ import 'pages/book_list/page.dart';
 import 'router/page_factory.dart';
 import 'router/route_information_parser.dart';
 
-final pageStackBloc = PageStackBloc(
+final pageStack = PageStack(
   bottomPage: BookListPage(),
   createPage: PageFactory.createPage,
 );
-final _routerDelegate = PageStackRouterDelegate(pageStackBloc);
+final _routerDelegate = PageStackRouterDelegate(pageStack);
 final _routeInformationParser = MyRouteInformationParser();
-final _backButtonDispatcher = PageStackBackButtonDispatcher(pageStackBloc);
+final _backButtonDispatcher = PageStackBackButtonDispatcher(pageStack);
 
 void main() => runApp(MyApp());
 

@@ -15,7 +15,7 @@ class AboutPageBloc extends PageStatefulBloc<AboutPageBlocState, void> {
       initialState = AboutPageBlocState(name: name);
 
   Future<void> onLicensePressed() async {
-    final result = await pageStacksBloc.currentStackBloc?.push(
+    final result = await pageStacks.currentStack?.push(
       InputPage(name: _name),
     );
 
@@ -23,7 +23,7 @@ class AboutPageBloc extends PageStatefulBloc<AboutPageBlocState, void> {
   }
 
   @override
-  void didPopNext(AbstractPage page, PageBlocCloseEvent event) {
+  void didPopNext(AbstractPage page, PagePopEvent event) {
     print('didPopNext: ${event.data}');
 
     final data = event.data;

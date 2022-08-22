@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-import 'bloc.dart';
 import '../../book_repository.dart';
+import 'state.dart';
 
 class BookListScreen extends StatelessWidget {
-  final BookListBloc bloc;
+  final BookListState state;
 
-  const BookListScreen({required this.bloc});
+  const BookListScreen(this.state);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class BookListScreen extends StatelessWidget {
             ListTile(
               title: Text(book.title),
               subtitle: Text(book.author),
-              onTap: () => bloc.showDetails(book),
+              onTap: () => state.showDetails(book),
             ),
         ],
       ),

@@ -4,7 +4,7 @@ import '../../main.dart';
 import '../../models/book.dart';
 import '../book_details/page.dart';
 
-class BookListBloc extends PageBloc {
+class BookListState with PageStateMixin {
   final books = [
     Book(1, 'Stranger in a Strange Land', 'Robert A. Heinlein'),
     Book(2, 'Foundation', 'Isaac Asimov'),
@@ -12,6 +12,6 @@ class BookListBloc extends PageBloc {
   ];
 
   void showDetails(Book book) {
-    pageStackBloc.push(BookDetailsPage(book: book));
+    pageStack.push(BookDetailsPage(book: book));
   }
 }

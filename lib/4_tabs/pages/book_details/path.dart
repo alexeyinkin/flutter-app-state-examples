@@ -25,12 +25,7 @@ class BookDetailsPath extends PagePath {
     final matches = _regExp.firstMatch(ri.location ?? '');
     if (matches == null) return null;
 
-    final bookId = int.tryParse(matches[1] ?? '');
-
-    if (bookId == null) {
-      return null; // Will never get here with present _regExp.
-    }
-
+    final bookId = int.tryParse(matches[1] ?? '') ?? (throw Error());
     return BookDetailsPath(
       bookId: bookId,
     );

@@ -5,9 +5,9 @@ import '../../models/book.dart';
 import '../book_details/page.dart';
 import 'path.dart';
 
-class BookListBloc extends PageBloc {
+class BookListState with PageStateMixin<void> {
   void showDetails(Book book) {
-    pageStacksBloc.currentStackBloc?.push(BookDetailsPage(bookId: book.id));
+    pageStacks.currentStack?.push(BookDetailsPage(bookId: book.id));
   }
 
   @override

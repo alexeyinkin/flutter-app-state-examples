@@ -1,13 +1,13 @@
 import 'package:app_state/app_state.dart';
 import 'package:flutter/foundation.dart';
 
-import 'bloc.dart';
 import 'screen.dart';
+import 'state.dart';
 
-class BookListPage extends BlocMaterialPage<void, BookListBloc> {
+class BookListPage extends StatefulMaterialPage<void, BookListState> {
   BookListPage() : super(
     key: const ValueKey('BookList'),
-    bloc: BookListBloc(),
-    createScreen: (b) => BookListScreen(bloc: b),
+    state: BookListState(),
+    createScreen: BookListScreen.new,
   );
 }

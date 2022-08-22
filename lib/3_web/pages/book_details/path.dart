@@ -1,8 +1,8 @@
 import 'package:app_state/app_state.dart';
 import 'package:flutter/widgets.dart';
 
-import 'page.dart';
 import '../book_list/path.dart';
+import 'page.dart';
 
 class BookDetailsPath extends PagePath {
   final int bookId;
@@ -24,12 +24,7 @@ class BookDetailsPath extends PagePath {
     final matches = _regExp.firstMatch(ri.location ?? '');
     if (matches == null) return null;
 
-    final bookId = int.tryParse(matches[1] ?? '');
-
-    if (bookId == null) {
-      return null; // Will never get here with present _regExp.
-    }
-
+    final bookId = int.tryParse(matches[1] ?? '') ?? (throw Error());
     return BookDetailsPath(
       bookId: bookId,
     );

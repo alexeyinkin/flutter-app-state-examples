@@ -5,7 +5,7 @@ import 'bloc.dart';
 class InputScreen extends StatelessWidget {
   final InputPageBloc bloc;
 
-  const InputScreen({required this.bloc});
+  const InputScreen(this.bloc);
 
   @override
   Widget build(BuildContext context) {

@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 
 import 'pages/book_list/page.dart';
 
-final pageStackBloc = PageStackBloc(bottomPage: BookListPage());
-final _routerDelegate = PageStackRouterDelegate(pageStackBloc);
-final _backButtonDispatcher = PageStackBackButtonDispatcher(pageStackBloc);
+final pageStack = PageStack(bottomPage: BookListPage());
+final _routerDelegate = PageStackRouterDelegate(pageStack);
+final _backButtonDispatcher = PageStackBackButtonDispatcher(pageStack);
 
 void main() => runApp(MyApp());
 

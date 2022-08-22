@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/link.dart';
 
-import 'bloc.dart';
+import 'state.dart';
 
 class InputScreen extends StatelessWidget {
-  final InputBloc bloc;
+  final InputState state;
 
-  const InputScreen({required this.bloc});
+  const InputScreen(this.state);
 
   @override
   Widget build(BuildContext context) {
@@ -22,17 +22,17 @@ class InputScreen extends StatelessWidget {
               style: Theme.of(context).textTheme.headline6,
             ),
             TextField(
-              controller: bloc.controller,
+              controller: state.controller,
             ),
-            // Container(height: 30),
-            // Link(
-            //   uri: Uri.parse('https://google.com'),
-            //   builder: (context, followLink) => ElevatedButton(
-            //     child: const Text('Navigate Away'),
-            //     onPressed: followLink,
-            //   ),
-            //   target: LinkTarget.self,
-            // ),
+            Container(height: 30),
+            Link(
+              uri: Uri.parse('https://google.com'),
+              builder: (context, followLink) => ElevatedButton(
+                child: const Text('Navigate Away'),
+                onPressed: followLink,
+              ),
+              target: LinkTarget.self,
+            ),
           ],
         ),
       ),

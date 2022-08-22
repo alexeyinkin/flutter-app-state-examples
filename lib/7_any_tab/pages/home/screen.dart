@@ -5,27 +5,27 @@ import 'package:flutter/material.dart';
 import '../../router/tab_enum.dart';
 
 class HomeScreen extends StatelessWidget {
-  final PageStacksBloc bloc;
+  final PageStacks stacks;
 
-  const HomeScreen({required this.bloc});
+  const HomeScreen({required this.stacks});
 
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
-      stream: bloc.events,
+      stream: stacks.events,
       builder: (context, snapshot) => _buildOnEvent(),
     );
   }
 
   Widget _buildOnEvent() {
-    final tab = TabEnum.values.byName(bloc.currentStackKey!);
+    final tab = TabEnum.values.byName(stacks.currentStackKey!);
 
     return Scaffold(
       body: KeyedStack<TabEnum>(
         itemKey: tab,
-        children: bloc.pageStacks.map((tabString, bloc) => MapEntry(
+        children: stacks.pageStacks.map((tabString, bloc) => MapEntry(
           TabEnum.values.byName(tabString),
-          PageStackNavigator(key: ValueKey(tabString), bloc: bloc)),
+          PageStackNavigator(key: ValueKey(tabString), stack: bloc)),
         ),
       ),
       bottomNavigationBar: KeyedBottomNavigationBar<TabEnum>(
@@ -40,7 +40,7 @@ class HomeScreen extends StatelessWidget {
             label: 'Two',
           ),
         },
-        onTap: (tab) => bloc.setCurrentStackKey(tab.name),
+        onTap: (tab) => stacks.setCurrentStackKey(tab.name),
       ),
     );
   }

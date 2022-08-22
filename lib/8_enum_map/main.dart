@@ -8,32 +8,32 @@ import 'router/page_factory.dart';
 import 'router/route_information_parser.dart';
 import 'router/tab_enum.dart';
 
-final pageStacksBloc = PageStacksBloc();
+final pageStacks = PageStacks();
 final _routerDelegate = MaterialPageStacksRouterDelegate(
-  pageStacksBloc: pageStacksBloc,
-  child: HomeScreen(bloc: pageStacksBloc),
+  pageStacks,
+  child: HomeScreen(stacks: pageStacks),
 );
 final _routeInformationParser = MyRouteInformationParser();
-final _backButtonDispatcher = PageStacksBackButtonDispatcher(pageStacksBloc);
+final _backButtonDispatcher = PageStacksBackButtonDispatcher(pageStacks);
 
 void main() {
-  pageStacksBloc.addPageStack(
+  pageStacks.addPageStack(
     TabEnum.books.name,
-    PageStackBloc(
+    PageStack(
       bottomPage: BookListPage(),
       createPage: PageFactory.createPage,
     ),
   );
 
-  pageStacksBloc.addPageStack(
+  pageStacks.addPageStack(
     TabEnum.about.name,
-    PageStackBloc(
+    PageStack(
       bottomPage: AboutPage(),
       createPage: PageFactory.createPage,
     ),
   );
 
-  pageStacksBloc.setCurrentStackKey(TabEnum.books.name, fire: false);
+  pageStacks.setCurrentStackKey(TabEnum.books.name, fire: false);
 
   runApp(MyApp());
 }

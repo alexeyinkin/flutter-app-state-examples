@@ -10,7 +10,7 @@ class PopupOpenButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        pageStacksBloc.currentStackBloc?.push(PopupPage());
+        pageStacks.currentStack?.push(PopupPage());
       },
       child: const Text('Open Pop-up'),
     );

@@ -1,8 +1,8 @@
 import 'package:app_state/app_state.dart';
 import 'package:flutter/material.dart';
 
-final pageStackBloc = PageStackBloc(bottomPage: HomePage());
-final _routerDelegate = PageStackRouterDelegate(pageStackBloc);
+final pageStack = PageStack(bottomPage: HomePage());
+final _routerDelegate = PageStackRouterDelegate(pageStack);
 
 void main() => runApp(MyApp());
 

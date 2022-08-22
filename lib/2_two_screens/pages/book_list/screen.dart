@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import 'bloc.dart';
+import 'state.dart';
 
 class BookListScreen extends StatelessWidget {
-  final BookListBloc bloc;
+  final BookListState state;
 
-  const BookListScreen({required this.bloc});
+  const BookListScreen(this.state);
 
   @override
   Widget build(BuildContext context) {
@@ -13,11 +13,11 @@ class BookListScreen extends StatelessWidget {
       appBar: AppBar(title: const Text('Home')),
       body: ListView(
         children: [
-          for (final book in bloc.books)
+          for (final book in state.books)
             ListTile(
               title: Text(book.title),
               subtitle: Text(book.author),
-              onTap: () => bloc.showDetails(book),
+              onTap: () => state.showDetails(book),
             ),
         ],
       ),

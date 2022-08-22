@@ -11,7 +11,7 @@ class HomeScreen extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           child: const Text("Open Input"),
-          onPressed: () => pageStackBloc.push(InputPage()),
+          onPressed: () => pageStack.push(InputPage()),
         ),
       ),
     );
