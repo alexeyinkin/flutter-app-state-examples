@@ -1,3 +1,9 @@
+# As of v0.7.4, the examples are now in the main repository, and this repository is archived
+
+[See here](https://github.com/alexeyinkin/flutter-app-state/tree/main/app_state/example).
+
+**The older content:**
+
 Examples for [app_state](https://pub.dev/packages/app_state) Flutter package,
 a bloc-based state management solution on top of Router API for larger apps.
 
